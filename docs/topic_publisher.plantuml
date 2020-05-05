@@ -1,0 +1,28 @@
+@startuml
+
+
+group #transparent advertise
+        SOSS -> "SystemHandle" as SH : advertise
+        create Publisher
+        SH -> Publisher : new
+        Publisher -> middleware : register_publisher
+end
+
+
+group #transparent notification
+        SOSS -> Publisher : publish(data)
+        Publisher -> Publisher : payload = convert_from_dynamicdata(data)
+        Publisher -> middleware : notify(payload)
+end
+
+
+box "Generic System Handle" #LightBlue
+        participant SH
+        participant Publisher
+end box
+
+
+participant middleware
+
+
+@enduml
