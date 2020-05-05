@@ -3,7 +3,9 @@ Getting Started
 
 **Table of Contents**
 
-* :ref:`Installation and deployment`
+* :ref:`Installation`
+
+* :ref:`Deployment`
 
 * :ref:`Example: ROS1-ROS2 communication`
 
@@ -13,15 +15,14 @@ Getting Started
 
 * :ref:`Getting Help`
 
-
-Installation and deployment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 In this section, we sketch the steps necessary for installing *SOSS* and running a :code:`soss` instance.
 Note that the workflow is
 dependent on the specific systems that are being communicated, given that each is brought into the *SOSS* world
 via a dedicated **System-Handle**.
-An example of how these generic steps are implemented in a concrete use-case can be found in the following section.
+An example of how these generic steps are implemented in a concrete use-case can be found in the final section.
+
+Installation
+^^^^^^^^^^^^
 
 As a first step, you will need to create a
 `colcon workspace <https://colcon.readthedocs.io/en/released/user/quick-start.html>`__
@@ -42,36 +43,40 @@ To do so, create a :code:`workspace/soss` folder and clone *SOSS* into it:
 
 Note: the :code:`--recursive` flag is mandatory to download some required third-parties.
 
-Notice that the *SOSS* repository does not contain all the **System-Handles** of the protocols that are to date
-integrated into the *SOSS* world.
-For those **System-Handles** that are not built-in, you need to clone their specific repositories into the
-:code:`workspace/soss` folder as well.
-
-Here, you can find a table of the repositories where you can find all of the *SOSS*-supported **System-Handles**:
-
-+-----------------------------------------------------------------+-------------------------------------------------------------------------+
-| **System-Handle**                                               | Repository                                                              |
-+=================================================================+=========================================================================+
-| **SOSS-ROS2**, **SOSS-WEBSOCKET**, **SOSS-MOCK**, **SOSS-ECHO** | ssh://git@github.com/eProsima/soss_v2 -b feature/xtypes-dds             |
-+-----------------------------------------------------------------+-------------------------------------------------------------------------+
-| **SOSS-DDS**                                                    | ssh://git@github.com:eProsima/SOSS-DDS.git -b feature/xtypes-dds        |
-+-----------------------------------------------------------------+-------------------------------------------------------------------------+
-| **SOSS-ROS1**                                                   | ssh://git@github.com:eProsima/soss-ros1.git -b feature/xtypes-support   |
-+-----------------------------------------------------------------+-------------------------------------------------------------------------+
-| **SOSS-FIWARE**                                                 | ssh://git@github.com:eProsima/SOSS-FIWARE.git -b feature/xtypes-support |
-+-----------------------------------------------------------------+-------------------------------------------------------------------------+
-
-Once all the necessary packages have been cloned, you need to build them. To do so, you can run:
+Once *SOSS* is in the :code:`src` directory of your colcon workspace, you can build the packages
+by running:
 
 .. code-block:: bash
 
     colcon build
 
-with the possible addition of flags depending on the specific use-case. Notice also that in most situations you will
-have to execute some additional commands before running the :code:`colcon build`, e. g. sourcing an external overlay,
-as is the case for *ROS2* and *ROS1* (see e. g. next section).
-
 Once that's finished building, you can source the new colcon overlay:
+
+.. code-block:: bash
+
+    source install/setup.bash
+
+
+Deployment
+^^^^^^^^^^
+
+Once *SOSS* is installed, you can run a :code:`soss` instance to put two or more middlewares into communication.
+Notice that the *SOSS* repository does not contain all the **System-Handles** of the protocols that are to date
+integrated into the *SOSS* world.
+For those **System-Handles** that are not built-in, you need to clone their specific repositories into the
+:code:`workspace/soss` folder as well.
+
+In the :ref:`Related Links <related links>` section you can find a table of the repositories of all
+the *SOSS*-supported **System-Handles**.
+
+Once all the necessary packages have been cloned, you need to build them. To do so, you need to run:
+
+.. code-block:: bash
+
+    colcon build
+
+with the possible addition of flags depending on the specific use-case. Once that's finished building, you can source
+the new colcon overlay:
 
 .. code-block:: bash
 
@@ -94,7 +99,7 @@ For more information on how to configure *SOSS* via a YAML file, please refer to
 **Note**: the sourcing of the local colcon overlay is required every time the colcon workspace is opened in
 a new shell environment.
 As an alternative, you can copy the source command with the full path of your local installation to your 
-:code:`.bashrc` file. For instance, for *SOSS* you would add:
+:code:`.bashrc` file as:
 
 .. code-block:: bash
 

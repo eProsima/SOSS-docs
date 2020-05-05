@@ -245,15 +245,8 @@ The snippet above will create three **System-Handles**:
 * A *ROS2* **System-Handle** or **SOSS-ROS2** named :code:`ros2_domain` with :code:`domain = 5` and :code:`node_name = "soss_5"`.
 * A *Fiware* **System-Handle** or **SOSS-FIWARE** with :code:`host = 192.168.1.59` and :code:`port = 1026`.
 
-Currently, the following **System-Handles** are available for *SOSS*:
-
-* **SOSS-DDS**: uses `Fast-RTPS <https://github.com/eProsima/Fast-RTPS>`_ to provide *DDS* compatibility.
-* **SOSS-ROS2**: uses `ROS2 <https://github.com/ros2/ros2>`_ to allow access *ROS2* systems.
-* **SOSS-ROS1**:uses `ROS <https://github.com/ros/ros>`_ to communicate with *ROS1* systems.
-* **SOSS-MOCK**: echo-like system for testing purposes.
-* **SOSS-FIWARE**: uses :code:`cURLpp` to communicate with *Fiware Orion Context-Broker* services.
-* **SOSS-WEBSOCKET**: uses :code:`websocketpp` to interact with *WebSocket* services.
-* **SOSS-SOMEIP**: uses :code:`vsomeip` to provide *SOME/IP* compatibility.
+The **System-Handles** currently available for *SOSS* are listed in the table that you can find in the
+:ref:`Related Links <related links>` section of this documentation.
 
 A new **System-Handle** can be created by implementing the desired :code:`SystemHandle` subclasses to
 add support to any other protocol or system.

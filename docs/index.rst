@@ -135,6 +135,7 @@ This section is meant to provide the user with an easy-to-use installation guide
 .. toctree::
     :caption: Installation Manual
 
+    external_dep
     getting_started
 
 User Manual
