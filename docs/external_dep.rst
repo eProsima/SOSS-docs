@@ -1,7 +1,7 @@
 External Dependencies
 =====================
 
-Each **System-Handle** may have specific additional dependencies.
+Each **System-Handle** may have specific dependencies.
 
 **CMake**
 
@@ -20,7 +20,6 @@ Related Links
 ^^^^^^^^^^^^^
 
 * `SOSS repository <https://github.com/eProsima/soss_v2/tree/feature/xtypes-dds>`__
-* `eProsima Fast-RTPS <https://github.com/eProsima/Fast-RTPS/>`__
 * `Colcon Manual <https://colcon.readthedocs.io/en/released/user/installation.html>`__
 * **System-Handle** repositories
 
