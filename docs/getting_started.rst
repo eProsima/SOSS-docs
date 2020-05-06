@@ -60,7 +60,7 @@ Once that's finished building, you can source the new colcon overlay:
 Deployment
 ^^^^^^^^^^
 
-Once *SOSS* is installed, you can run a :code:`soss` instance to put two or more middlewares into communication.
+Now you can run a :code:`soss` instance to put two or more middlewares into communication.
 Notice that the *SOSS* repository does not contain all the **System-Handles** of the protocols that are to date
 integrated into the *SOSS* world.
 For those **System-Handles** that are not built-in, you need to clone their specific repositories into the
@@ -69,7 +69,7 @@ For those **System-Handles** that are not built-in, you need to clone their spec
 In the :ref:`Related Links <related links>` section you can find a table of the repositories of all
 the *SOSS*-supported **System-Handles**.
 
-Once all the necessary packages have been cloned, you need to build them. To do so, you need to run:
+Once all the necessary packages have been cloned, you need to build them. To do so, run:
 
 .. code-block:: bash
 
