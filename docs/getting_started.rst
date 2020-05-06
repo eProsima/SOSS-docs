@@ -50,6 +50,38 @@ by running:
 
     colcon build
 
+.. note::
+
+    :code:`colcon build` will build the package :code:`soss-core` and all the built-in **System-Handles**.
+    If you don't want to build the built-in **System-Handles** you can execute
+    :code:`colcon build --packages-up-to soss-core`.
+    If you only want a to build a sub-set of built-in **System-Handles** you can use the same directive
+    with the name of the packages, for example:
+
+    .. code-block:: bash
+
+        colcon build --packages-up-to soss-ros2 soss-fiware
+
+    The built-in **System-Handles** packages are:
+
+    * :code:`soss-ros2`: ROS2 **System-Handle**.
+
+    * :code:`soss-websocket`: WebSocket **System-Handle**.
+
+    * :code:`soss-mock`: Mock **System-Handle** for testing purposes.
+
+    * :code:`soss-echo`: Echo **System-Handle** for example purposes.
+
+    Additional **System-Handles** in their own repositories:
+
+    * :code:`soss-fiware`: `Fiware Orion ContextBroker System-Handle <https://github.com/eProsima/SOSS-FIWARE>`__.
+
+    * :code:`soss-ros1`: `ROS System-Handle <https://github.com/eProsima/soss-ros1>`__.
+
+    * :code:`soss-dds`: `DDS System-Handle <https://github.com/eProsima/SOSS-DDS>`__.
+
+    Most of the **System-Handle** packages include a :code:`-test` package for testing purposes.
+
 Once that's finished building, you can source the new colcon overlay:
 
 .. code-block:: bash
@@ -83,11 +115,11 @@ the new colcon overlay:
     source install/setup.bash
 
 The workspace is now prepared for running a :code:`soss` instance. From the fully overlaid shell, you will have to
-execute the :code:`soss` command, followed by the name of the YAML configuration file that describes 
+execute the :code:`soss` command, followed by the name of the YAML configuration file that describes
 how messages should be passed among the middlewares involved:
 
 .. code-block:: bash
-    
+
     soss <config.yaml>
 
 Once *SOSS* is initiated, the user will be able to communicate the desired protocols.
@@ -98,7 +130,7 @@ For more information on how to configure *SOSS* via a YAML file, please refer to
 
 **Note**: the sourcing of the local colcon overlay is required every time the colcon workspace is opened in
 a new shell environment.
-As an alternative, you can copy the source command with the full path of your local installation to your 
+As an alternative, you can copy the source command with the full path of your local installation to your
 :code:`.bashrc` file as:
 
 .. code-block:: bash
@@ -106,7 +138,7 @@ As an alternative, you can copy the source command with the full path of your lo
     source PATH_TO_WORKSPACE/workspaces/soss/install/setup.bash
 
 Where :code:`PATH_TO_WORKSPACE` is the path to the local :code:`workspaces/soss` directory.
-The same applies for the **System-Handle** repositories. 
+The same applies for the **System-Handle** repositories.
 
 
 Example: ROS1-ROS2 communication
