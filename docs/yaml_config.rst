@@ -4,11 +4,27 @@ YAML Configuration
 *SOSS* is configured by means of a YAML file that specifies a set of compulsory fields, plus some optional ones.
 The most common fields required to configure a **System-Handle** are:
 
-* :code:`types`: specifies the IDL types used by *SOSS* to transmit messages
-* :code:`systems`: specifies the middlewares involved in the communication
-* :code:`routes`: specifies which bridges SOSS needs to create
+* :code:`types`: specifies the IDL types used by *SOSS* to transmit messages.
+
+    * :code:`idl`: IDL content.
+
+* :code:`systems`: specifies the middlewares involved in the communication allowing configure them.
+
+* :code:`routes`: specifies which bridges SOSS needs to create.
+
+    * :code:`from`-:code:`to`: publisher/subscriber communication.
+
+    * :code:`server`-:code:`clients`: server/client communication.
+
 * :code:`topics`/:code:`services`: specify the topics exchanged over the above bridges in either publisher/subscriber
-  or client/server type communications
+  or client/server type communications, allowing configurate it.
+
+    * :code:`type`: type involved in the communication.
+
+    * :code:`route`: communication bridge to apply.
+
+    * :code:`remap`: allows to stablish equivalences between :code:`topic` names, :code:`types`, and custom
+      configurations.
 
 A generic YAML communicating two systems has the following structure:
 
