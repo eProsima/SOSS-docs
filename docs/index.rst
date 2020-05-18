@@ -147,8 +147,6 @@ we detail the internal structure of a **System-Handle** and guide the user throu
 Secondly, we explain how to configure *SOSS* by means of YAML files, explaining how to fill the required fields,
 depending on the needs of the specific use-case.
 
-.. _user_man:
-
 .. toctree::
     :caption: User Manual
 

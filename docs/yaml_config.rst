@@ -8,7 +8,7 @@ The most common fields required to configure a **System-Handle** are:
 
     * :code:`idl`: IDL content.
 
-* :code:`systems`: specifies the middlewares involved in the communication allowing configure them.
+* :code:`systems`: specifies the middlewares involved in the communication, allowing to configure them.
 
 * :code:`routes`: specifies which bridges SOSS needs to create.
 
@@ -16,14 +16,14 @@ The most common fields required to configure a **System-Handle** are:
 
     * :code:`server`-:code:`clients`: server/client communication.
 
-* :code:`topics`/:code:`services`: specify the topics exchanged over the above bridges in either publisher/subscriber
-  or client/server type communications, allowing configurate it.
+* :code:`topics`/:code:`services`: specify the topics exchanged over the :code:`routes` above in either
+  publisher/subscriber or client/server type communications, allowing configurate it.
 
     * :code:`type`: type involved in the communication.
 
     * :code:`route`: communication bridge to apply.
 
-    * :code:`remap`: allows to stablish equivalences between :code:`topic` names, :code:`types`, and custom
+    * :code:`remap`: allows to establish equivalences between :code:`topic` names, :code:`types`, and custom
       configurations.
 
 A generic YAML communicating two systems has the following structure:
@@ -261,7 +261,7 @@ The snippet above will create three **System-Handles**:
 * A *ROS2* **System-Handle** or **SOSS-ROS2** named :code:`ros2_domain` with :code:`domain = 5` and :code:`node_name = "soss_5"`.
 * A *Fiware* **System-Handle** or **SOSS-FIWARE** with :code:`host = 192.168.1.59` and :code:`port = 1026`.
 
-The **System-Handles** currently available for *SOSS* are listed in the table that you can find in the
+The **System-Handles** currently available for *SOSS* are listed in a table that you can find in the
 :ref:`Related Links <related links>` section of this documentation.
 
 A new **System-Handle** can be created by implementing the desired :code:`SystemHandle` subclasses to

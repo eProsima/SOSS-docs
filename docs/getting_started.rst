@@ -55,7 +55,7 @@ by running:
     :code:`colcon build` will build the package :code:`soss-core` and all the built-in **System-Handles**.
     If you don't want to build the built-in **System-Handles** you can execute
     :code:`colcon build --packages-up-to soss-core`.
-    If you only want a to build a sub-set of built-in **System-Handles** you can use the same directive
+    If you only want a to build a sub-set of the built-in **System-Handles**, you can use the same directive
     with the name of the packages, for example:
 
     .. code-block:: bash
