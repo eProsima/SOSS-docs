@@ -28,11 +28,15 @@ services on the middlewares of the systems involved.
 
 .. image:: CONCEPT.png
 
+.. _main_features:
+
 Main Features
 ^^^^^^^^^^^^^
 
 *SOSS* provides a plugin-based platform that is easily and intuitively configurable.
 This section explains these key features.
+
+.. _system_handles:
 
 System Handles
 --------------
@@ -49,7 +53,7 @@ Built-in **System-Handles** are provided for the following systems: *DDS*, *Orio
 New **System-Handles** for additional protocols can be easily created, automatically allowing communication of the
 new protocol with the middlewares that are already supported.
 Detailed information on how to create a **System-Handle** can be found in the
-:ref:`System-Handle Creation <system-handle creation>` section of this documentation.
+:ref:`sh_creation` section of this documentation.
 
 The plugin-based framework is especially advantageous when it comes to integrating a new component into a complex
 system where the rest of sub-systems use incompatible protocols.
@@ -61,12 +65,14 @@ rather than *N²*.
 
 .. image:: SH_2.png
 
+.. _yaml_config_files:
+
 YAML configuration files
 ------------------------
 
 *SOSS* is configured by means of a YAML file.
 Detailed information on how to configure a *SOSS*-mediated communication by means of one such file can be found in the
-:ref:`YAML Configuration <yaml configuration>` section of this documentation.
+:ref:`yaml_config` section of this documentation.
 Notice that a single YAML file is needed no matter how many protocols are being communicated.
 
 
@@ -97,6 +103,8 @@ the middlewares involved, we can obtain an instance which translates between *We
         chatter: { type: "std_msgs/String", route: web2robot }
 
 
+.. _additional_features:
+
 Additional features
 -------------------
 
@@ -116,7 +124,7 @@ needed by the core to integrate them.
 **Easy to use.**
 
 Installing and running *SOSS* is intuitive and straightforward. Please refer to the
-:ref:`Getting Started <getting started>` section to be guided through the installation process.
+:ref:`Getting Started <getting_started>` section to be guided through the installation process.
 
 **Commercial support.**
 

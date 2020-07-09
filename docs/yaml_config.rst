@@ -1,3 +1,5 @@
+.. _yaml_config:
+
 YAML Configuration
 ==================
 
@@ -17,7 +19,7 @@ The most common fields required to configure a **System-Handle** are:
     * :code:`server`-:code:`clients`: server/client communication.
 
 * :code:`topics`/:code:`services`: specify the topics exchanged over the :code:`routes` above in either
-  publisher/subscriber or client/server type communications, allowing configurate it.
+  publisher/subscriber or client/server type communications, allowing to configure them.
 
     * :code:`type`: type involved in the communication.
 
@@ -120,7 +122,6 @@ firmware:
         open_door: { type: "rmf_msgs/OpenDoor", route: door_service }
         close_door: { type: "rmf_msgs/CloseDoor", route: door_service }
 
-
 The idea is that each system plays some role in the overall system of systems, and the user needs to
 specify the channels that these systems are expected to communicate over, as well as the direction
 that information should flow over those channels. Topics can be many-to-many, one-to-many, or
@@ -128,7 +129,7 @@ many-to-one.
 Additionally, service-client routes can be provided. Services must always designate one service provider, but may have
 one or more clients.
 Some systems may have a different name for a topic or a service, so the :code:`remap` dictionary allows the
-config file to specify a different name that *SOSS* should use for each system.
+configuration file to specify a different name that *SOSS* should use for each system.
 
 Here is a diagram that illustrates the concept:
 
@@ -258,15 +259,16 @@ If :code:`type` is omitted, the key of the YAML entry will be used as :code:`typ
 The snippet above will create three **System-Handles**:
 
 * A *DDS* **System-Handle** or **SOSS-DDS** with default configuration.
-* A *ROS2* **System-Handle** or **SOSS-ROS2** named :code:`ros2_domain` with :code:`domain = 5` and :code:`node_name = "soss_5"`.
+* A *ROS2* **System-Handle** or **SOSS-ROS2** named :code:`ros2_domain` with :code:`domain = 5` and
+  :code:`node_name = "soss_5"`.
 * A *Fiware* **System-Handle** or **SOSS-FIWARE** with :code:`host = 192.168.1.59` and :code:`port = 1026`.
 
 The **System-Handles** currently available for *SOSS* are listed in a table that you can find in the
-:ref:`Related Links <related links>` section of this documentation.
+:ref:`related_links` section of this documentation.
 
 A new **System-Handle** can be created by implementing the desired :code:`SystemHandle` subclasses to
 add support to any other protocol or system.
-For more information consult the :ref:`System-Handle Creation <system-handle creation>` section.
+For more information consult the :ref:`sh_creation` section.
 
 Routes definition
 ^^^^^^^^^^^^^^^^^
@@ -274,7 +276,7 @@ Routes definition
 This section allows enumerating the bridges between the systems that *SOSS* must manage.
 To achieve bidirectional communication, both ways must be specified.
 
-:code:`routes` definition keywords are specific depending on wether the route is
+:code:`routes` definition keywords are specific depending on whether the route is
 defining a *publisher/subscriber* path (:code:`from`-:code:`to`) or a *service/client* communication
 path (:code:`server`-:code:`client`). For example:
 
