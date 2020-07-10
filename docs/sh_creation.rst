@@ -1,3 +1,5 @@
+.. _sh_creation:
+
 System-Handle Creation
 ======================
 
@@ -198,7 +200,7 @@ as argument.
 Sequence diagrams
 ^^^^^^^^^^^^^^^^^
 
-The following diagrams ilustrate the previous sections using a *generic* **System-Handle**.
+The following diagrams illustrate the previous sections using a *generic* **System-Handle**.
 
 TopicPublisher flow
 ~~~~~~~~~~~~~~~~~~~
